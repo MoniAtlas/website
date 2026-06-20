@@ -16,35 +16,80 @@ export default function WaitlistPage() {
             Early beta
           </p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-            Join the waitlist
+            Join MoniAtlas early access
           </h1>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Be one of the first to access MoniAtlas when early beta access
-            opens.
+            Register interest for early access, Founder, Plus, or the future
+            Household plan. There is no payment checkout yet.
           </p>
 
-          <form className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm sm:flex sm:gap-3 sm:p-5">
-            <label className="sr-only" htmlFor="email">
-              Email address
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@example.com"
-              className="w-full rounded-full border border-slate-300 bg-white px-5 py-3 text-slate-950 placeholder:text-slate-400 focus:border-[#004aad] focus:outline-none focus:ring-2 focus:ring-[#004aad]"
-            />
+          <form className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+            <div className="grid gap-5">
+              <div>
+                <label
+                  className="text-sm font-semibold text-slate-800"
+                  htmlFor="name"
+                >
+                  Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 placeholder:text-slate-400 focus:border-[#004aad] focus:outline-none focus:ring-2 focus:ring-[#004aad]"
+                />
+              </div>
+
+              <div>
+                <label
+                  className="text-sm font-semibold text-slate-800"
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 placeholder:text-slate-400 focus:border-[#004aad] focus:outline-none focus:ring-2 focus:ring-[#004aad]"
+                />
+              </div>
+
+              <div>
+                <label
+                  className="text-sm font-semibold text-slate-800"
+                  htmlFor="plan"
+                >
+                  Plan interest
+                </label>
+                <select
+                  id="plan"
+                  name="plan"
+                  defaultValue="Early access"
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 focus:border-[#004aad] focus:outline-none focus:ring-2 focus:ring-[#004aad]"
+                >
+                  <option>Early access</option>
+                  <option>Founder</option>
+                  <option>Plus</option>
+                  <option>Household</option>
+                </select>
+              </div>
+            </div>
+
             <button
               type="button"
-              className="mt-3 w-full rounded-full bg-[#004aad] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#003f94] focus:outline-none focus:ring-2 focus:ring-[#004aad] focus:ring-offset-4 sm:mt-0 sm:w-auto"
+              className="mt-6 w-full rounded-full bg-[#004aad] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#003f94] focus:outline-none focus:ring-2 focus:ring-[#004aad] focus:ring-offset-4 sm:w-auto"
             >
-              Join waitlist
+              Submit interest
             </button>
           </form>
 
           <p className="mt-4 text-sm leading-6 text-slate-500">
-            This form is visual only for now. We will connect it to a waitlist
-            database later.
+            We&apos;ll let you know when MoniAtlas early access is ready. This
+            placeholder form does not process payments or collect personal
+            financial details.
           </p>
         </section>
       </div>

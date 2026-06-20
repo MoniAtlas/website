@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PricingSection } from "./components/PricingSection";
 
 export default function HomePage() {
   return (
@@ -26,7 +27,7 @@ export default function HomePage() {
         <div className="grid flex-1 items-center gap-12 py-20 md:grid-cols-2">
           <div>
             <p className="mb-4 inline-flex rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-[#004aad]">
-              AI-first financial clarity for UK professionals
+              Early access money organisation for UK professionals
             </p>
 
             <h1 className="max-w-3xl text-5xl font-bold tracking-tight md:text-6xl">
@@ -34,8 +35,8 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-              MoniAtlas helps you understand your net worth, cash flow, and
-              financial trajectory in one simple dashboard.
+              MoniAtlas helps you organise money tracking, cash flow planning,
+              and forward-looking insights in one simple dashboard.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -55,7 +56,8 @@ export default function HomePage() {
             </div>
 
             <p className="mt-5 text-sm text-slate-500">
-              Insights only. MoniAtlas does not provide financial advice.
+              Insights only. MoniAtlas does not provide regulated financial
+              advice.
             </p>
           </div>
 
@@ -90,6 +92,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <PricingSection />
     </main>
   );
 }
