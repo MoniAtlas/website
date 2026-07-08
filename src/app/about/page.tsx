@@ -1,35 +1,54 @@
 import Link from "next/link";
+import { CardGrid, PublicPage, Section } from "@/components/public-page";
+
+const registerUrl = "https://app.moniatlas.com/register";
+
+const differenceCards = [
+  "Built around the full financial picture",
+  "Manual-first so users can start quickly",
+  "Connected account features planned",
+  "AI insights designed to explain, not advise",
+  "Focused on clarity, not financial noise",
+];
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white px-6 py-10 text-slate-950">
-      <div className="mx-auto max-w-3xl">
-        <Link
-          href="/"
-          className="text-sm font-semibold text-[#004aad] underline-offset-4 hover:underline focus:outline-none focus:ring-2 focus:ring-[#004aad] focus:ring-offset-4"
-        >
-          Back to home
-        </Link>
+    <PublicPage
+      eyebrow="About"
+      title="About MoniAtlas"
+      copy="MoniAtlas is being built to help financially busy people get a clearer view of their money, without relying on scattered spreadsheets, disconnected apps, and mental guesswork."
+      ctaHref={registerUrl}
+      ctaLabel="Create Account"
+      secondaryHref="/how-it-works"
+      secondaryLabel="See how it works"
+    >
+      <Section
+        title="Why MoniAtlas exists"
+        copy="Modern financial lives are increasingly fragmented. People manage multiple accounts, debts, pensions, investments, bills, mortgages, and goals across different providers. MoniAtlas exists to bring that information into one clearer view."
+      />
 
-        <section className="py-16">
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#004aad]">
-            Mission
-          </p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-            About MoniAtlas
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            MoniAtlas is being built to help financially busy people get
-            clarity, control, and forward visibility across their financial
-            lives.
-          </p>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            It is an AI-first financial clarity platform for UK professionals,
-            focused on insights that help people understand their position
-            without providing financial advice.
-          </p>
-        </section>
-      </div>
-    </main>
+      <Section
+        title="Our mission"
+        copy="To help people organise, track, and understand their financial lives with more clarity and confidence."
+        tone="muted"
+      />
+
+      <Section title="What makes MoniAtlas different">
+        <CardGrid items={differenceCards} />
+      </Section>
+
+      <Section
+        title="Insights, not advice"
+        copy="MoniAtlas does not provide regulated financial advice. The product is designed to help users understand their own information through organisation, tracking, planning, and explainable insights."
+        tone="muted"
+      >
+        <Link
+          href={registerUrl}
+          className="mt-8 inline-flex rounded-full bg-[#004aad] px-6 py-3 font-semibold text-white hover:bg-[#003f94]"
+        >
+          Create Account
+        </Link>
+      </Section>
+    </PublicPage>
   );
 }

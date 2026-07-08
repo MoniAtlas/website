@@ -7,7 +7,16 @@ const pricingPlans = [
     name: "Free",
     price: "£0",
     cadence: "/month",
-    purpose: "Start with manual tracking, a basic Money Map, and limited linked account access.",
+    purpose:
+      "For people who want to start building their Money Map and understand their financial position in one place.",
+    features: [
+      "Manual accounts",
+      "Money Map overview",
+      "Basic net worth view",
+      "Basic cash flow planner",
+      "Basic debt overview",
+      "Basic property and mortgage tracking",
+    ],
     cta: "Create Account",
     href: registerUrl,
   },
@@ -15,16 +24,37 @@ const pricingPlans = [
     name: "Founder",
     price: "£4.99",
     cadence: "/month",
-    purpose: "For early adopters who want richer planning tools and founder pricing lock-in.",
+    badge: "Planned / early adopter",
+    purpose:
+      "For early adopters who want enhanced planning tools as MoniAtlas develops.",
+    features: [
+      "Everything in Free",
+      "Recurring bills and payment tracking",
+      "Enhanced cash flow planner",
+      "Retirement snapshot",
+      "Early access to new features",
+    ],
     cta: "Register interest",
     href: "/waitlist?plan=founder",
+    note: "Founder plan is not charged yet.",
     recommended: true,
   },
   {
     name: "Plus",
     price: "£8.99",
     cadence: "/month",
-    purpose: "For users who want advanced insights, planning, alerts, and priority support.",
+    badge: "Coming soon",
+    purpose:
+      "For users who want connected accounts, automation, and AI-powered financial insights once those features are ready.",
+    features: [
+      "Everything in Founder",
+      "Open Banking account connections",
+      "Automated balance updates",
+      "AI money assistant",
+      "Forecasts and scenario planning",
+      "Smart reminders",
+      "Monthly money check-in",
+    ],
     cta: "Coming soon",
     href: "/waitlist?plan=plus",
   },
@@ -219,9 +249,9 @@ export function PricingSection({
                   : "border-slate-200 bg-white"
               }`}
             >
-              {plan.recommended ? (
+              {plan.badge || plan.recommended ? (
                 <span className="mb-4 w-fit rounded-full bg-[#004aad] px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-                  Recommended
+                  {plan.badge || "Recommended"}
                 </span>
               ) : null}
               <h3 className="text-2xl font-bold text-slate-950">{plan.name}</h3>
@@ -236,6 +266,22 @@ export function PricingSection({
                   {plan.cadence}
                 </span>
               </div>
+
+              <ul className="mt-6 grid gap-3 text-sm leading-6 text-slate-700">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#004aad]" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {plan.note ? (
+                <p className="mt-5 rounded-2xl bg-white/70 p-3 text-sm leading-6 text-slate-600">
+                  {plan.note}
+                </p>
+              ) : null}
+
               <Link
                 href={plan.href}
                 className={`mt-8 rounded-full px-5 py-3 text-center text-sm font-semibold ${
@@ -252,6 +298,11 @@ export function PricingSection({
 
         <p className="mt-6 rounded-2xl bg-slate-50 p-5 text-sm leading-6 text-slate-600">
           Household plan planned later at £14.99/month.
+          <span className="mt-2 block">
+            No payment is needed to start. MoniAtlas provides organisation,
+            tracking, planning, and insights. It does not provide regulated
+            financial advice.
+          </span>
         </p>
 
         <div className="mt-10 rounded-[1.75rem] border border-slate-200 bg-slate-50 p-4 shadow-sm sm:p-6">

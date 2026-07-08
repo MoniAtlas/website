@@ -5,11 +5,12 @@ const loginUrl = "https://app.moniatlas.com/login";
 const registerUrl = "https://app.moniatlas.com/register";
 
 const navItems = [
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Open Banking", href: "#open-banking" },
-  { label: "Security", href: "#security" },
-  { label: "About", href: "#about" },
+  { label: "How it works", href: "/how-it-works" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Open Banking", href: "/open-banking" },
+  { label: "Security", href: "/security" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const productFeatures = [
@@ -76,7 +77,7 @@ export default function HomePage() {
               MoniAtlas
             </Link>
 
-            <nav className="order-3 hidden w-full items-center justify-center gap-6 text-sm font-medium text-blue-50/90 md:order-2 md:flex md:w-auto">
+            <nav className="order-3 flex w-full items-center gap-5 overflow-x-auto text-sm font-medium text-blue-50/90 md:order-2 md:w-auto md:justify-center md:overflow-visible">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
@@ -131,7 +132,7 @@ export default function HomePage() {
                   Create Account
                 </Link>
                 <Link
-                  href="#how-it-works"
+                  href="/how-it-works"
                   className="rounded-full border border-white/35 px-7 py-3 text-center font-semibold text-white transition hover:bg-white/10"
                 >
                   See how it works
@@ -354,7 +355,7 @@ export default function HomePage() {
                 Create Account
               </Link>
               <Link
-                href="#pricing"
+                href="/pricing"
                 className="rounded-full border border-white/35 px-6 py-3 text-center font-semibold text-white hover:bg-white/10"
               >
                 View pricing
@@ -379,22 +380,22 @@ export default function HomePage() {
             </p>
           </div>
           <nav className="grid grid-cols-2 gap-3 text-sm text-slate-300 sm:grid-cols-3">
-            <Link href="#how-it-works" className="hover:text-white">
+            <Link href="/how-it-works" className="hover:text-white">
               How it works
             </Link>
-            <Link href="#pricing" className="hover:text-white">
+            <Link href="/pricing" className="hover:text-white">
               Pricing
             </Link>
-            <Link href="#open-banking" className="hover:text-white">
+            <Link href="/open-banking" className="hover:text-white">
               Open Banking
             </Link>
-            <Link href="#security" className="hover:text-white">
+            <Link href="/security" className="hover:text-white">
               Security
             </Link>
-            <Link href="#about" className="hover:text-white">
+            <Link href="/about" className="hover:text-white">
               About
             </Link>
-            <Link href="mailto:hello@moniatlas.com" className="hover:text-white">
+            <Link href="/contact" className="hover:text-white">
               Contact
             </Link>
             <Link href="/privacy" className="hover:text-white">

@@ -1,98 +1,102 @@
 import Link from "next/link";
+import { PublicPage, Section } from "@/components/public-page";
+
+const registerUrl = "https://app.moniatlas.com/register";
 
 export default function WaitlistPage() {
   return (
-    <main className="min-h-screen bg-white px-6 py-10 text-slate-950">
-      <div className="mx-auto max-w-3xl">
-        <Link
-          href="/"
-          className="text-sm font-semibold text-[#004aad] underline-offset-4 hover:underline focus:outline-none focus:ring-2 focus:ring-[#004aad] focus:ring-offset-4"
-        >
-          Back to home
-        </Link>
-
-        <section className="py-16">
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#004aad]">
-            Early beta
-          </p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-            Join MoniAtlas early access
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Register interest for early access, Founder, Plus, or the future
-            Household plan. There is no payment checkout yet.
-          </p>
-
-          <form className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+    <PublicPage
+      eyebrow="Register interest"
+      title="Register your interest"
+      copy="Tell us which MoniAtlas plan you are interested in and we will let you know as paid features become available."
+      ctaHref={registerUrl}
+      ctaLabel="Create Account"
+      secondaryHref="/pricing"
+      secondaryLabel="View pricing"
+    >
+      <Section>
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-start">
+          <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5 shadow-sm sm:p-6">
             <div className="grid gap-5">
               <div>
-                <label
-                  className="text-sm font-semibold text-slate-800"
-                  htmlFor="name"
-                >
+                <label className="text-sm font-semibold text-slate-800" htmlFor="name">
                   Name
                 </label>
                 <input
                   id="name"
-                  name="name"
                   type="text"
                   placeholder="Your name"
-                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 placeholder:text-slate-400 focus:border-[#004aad] focus:outline-none focus:ring-2 focus:ring-[#004aad]"
+                  disabled
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-500 placeholder:text-slate-400"
                 />
               </div>
-
               <div>
-                <label
-                  className="text-sm font-semibold text-slate-800"
-                  htmlFor="email"
-                >
+                <label className="text-sm font-semibold text-slate-800" htmlFor="email">
                   Email
                 </label>
                 <input
                   id="email"
-                  name="email"
                   type="email"
                   placeholder="you@example.com"
-                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 placeholder:text-slate-400 focus:border-[#004aad] focus:outline-none focus:ring-2 focus:ring-[#004aad]"
+                  disabled
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-500 placeholder:text-slate-400"
                 />
               </div>
-
               <div>
-                <label
-                  className="text-sm font-semibold text-slate-800"
-                  htmlFor="plan"
-                >
+                <label className="text-sm font-semibold text-slate-800" htmlFor="plan">
                   Plan interest
                 </label>
                 <select
                   id="plan"
-                  name="plan"
-                  defaultValue="Early access"
-                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-950 focus:border-[#004aad] focus:outline-none focus:ring-2 focus:ring-[#004aad]"
+                  defaultValue="Founder"
+                  disabled
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-500"
                 >
-                  <option>Early access</option>
+                  <option>Free</option>
                   <option>Founder</option>
                   <option>Plus</option>
                   <option>Household</option>
                 </select>
               </div>
+              <div>
+                <label className="text-sm font-semibold text-slate-800" htmlFor="message">
+                  Message optional
+                </label>
+                <textarea
+                  id="message"
+                  rows={5}
+                  placeholder="Tell us what you are interested in"
+                  disabled
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-500 placeholder:text-slate-400"
+                />
+              </div>
             </div>
-
             <button
               type="button"
-              className="mt-6 w-full rounded-full bg-[#004aad] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#003f94] focus:outline-none focus:ring-2 focus:ring-[#004aad] focus:ring-offset-4 sm:w-auto"
+              className="mt-6 rounded-full bg-[#004aad] px-6 py-3 text-sm font-semibold text-white shadow-sm"
             >
-              Submit interest
+              Register interest
             </button>
-          </form>
+            <p className="mt-4 text-sm leading-6 text-slate-500">
+              This form is not connected yet. No payment is taken.
+            </p>
+          </div>
 
-          <p className="mt-4 text-sm leading-6 text-slate-500">
-            We&apos;ll let you know when MoniAtlas early access is ready. This
-            placeholder form does not process payments or collect personal
-            financial details.
-          </p>
-        </section>
-      </div>
-    </main>
+          <aside className="rounded-[1.75rem] bg-[#004aad] p-6 text-white shadow-2xl shadow-blue-950/15">
+            <h2 className="text-2xl font-bold">Ready to start?</h2>
+            <p className="mt-4 text-blue-50">
+              Already ready to start? Create your free account and begin
+              building your Money Map.
+            </p>
+            <Link
+              href={registerUrl}
+              className="mt-6 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-[#004aad] hover:bg-blue-50"
+            >
+              Create Account
+            </Link>
+          </aside>
+        </div>
+      </Section>
+    </PublicPage>
   );
 }
