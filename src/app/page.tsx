@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PricingSection } from "./components/PricingSection";
 
 const loginUrl = "https://app.moniatlas.com/login";
 const registerUrl = "https://app.moniatlas.com/register";
@@ -51,34 +52,6 @@ const steps = [
   "Add your accounts",
   "View your financial picture",
   "Ask Moni",
-];
-
-const pricingPlans = [
-  {
-    name: "Free",
-    price: "£0",
-    cadence: "/month",
-    copy: "Start with manual tracking and a clear Money Map.",
-    cta: "Create Account",
-    href: registerUrl,
-  },
-  {
-    name: "Founder",
-    price: "£4.99",
-    cadence: "/month",
-    copy: "Early richer planning tools for people who want to shape MoniAtlas.",
-    cta: "Register interest",
-    href: "/waitlist?plan=founder",
-    recommended: true,
-  },
-  {
-    name: "Plus",
-    price: "£8.99",
-    cadence: "/month",
-    copy: "Connected accounts and AI-powered insights as MoniAtlas develops.",
-    cta: "Coming soon",
-    href: "/waitlist?plan=plus",
-  },
 ];
 
 const trustCards = [
@@ -333,63 +306,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="pricing" className="bg-white px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wide text-[#004aad]">
-              Pricing
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              Start free, upgrade as MoniAtlas grows
-            </h2>
-          </div>
-          <div className="mt-9 grid gap-5 lg:grid-cols-3">
-            {pricingPlans.map((plan) => (
-              <article
-                key={plan.name}
-                className={`relative flex h-full flex-col rounded-3xl border p-6 shadow-sm ${
-                  plan.recommended
-                    ? "border-[#004aad] bg-blue-50/70 ring-4 ring-blue-100"
-                    : "border-slate-200 bg-white"
-                }`}
-              >
-                {plan.recommended ? (
-                  <span className="mb-4 w-fit rounded-full bg-[#004aad] px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-                    Recommended
-                  </span>
-                ) : null}
-                <h3 className="text-2xl font-bold text-slate-950">
-                  {plan.name}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {plan.copy}
-                </p>
-                <div className="mt-6">
-                  <span className="text-4xl font-bold tracking-tight">
-                    {plan.price}
-                  </span>
-                  <span className="ml-1 text-sm font-medium text-slate-500">
-                    {plan.cadence}
-                  </span>
-                </div>
-                <Link
-                  href={plan.href}
-                  className={`mt-8 rounded-full px-5 py-3 text-center text-sm font-semibold ${
-                    plan.recommended
-                      ? "bg-[#004aad] text-white hover:bg-[#003f94]"
-                      : "border border-slate-300 text-slate-900 hover:border-[#004aad] hover:text-[#004aad]"
-                  }`}
-                >
-                  {plan.cta}
-                </Link>
-              </article>
-            ))}
-          </div>
-          <p className="mt-6 rounded-2xl bg-slate-50 p-5 text-sm leading-6 text-slate-600">
-            Household plan planned later at £14.99/month.
-          </p>
-        </div>
-      </section>
+      <PricingSection />
 
       <section
         id="security"
