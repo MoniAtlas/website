@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CookieConsentBanner, SiteAnalytics } from "@/components/site-analytics";
 
 export const metadata: Metadata = {
   title: "MoniAtlas | One map for all your money",
@@ -14,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB">
-      <body>{children}</body>
+      <body>{children}<CookieConsentBanner /><SiteAnalytics /></body>
     </html>
   );
 }

@@ -51,6 +51,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
         <div className="order-2 flex items-center gap-2 md:order-3">
           <Link
             href={loginUrl}
+            data-analytics-event="login_clicked"
             className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
               isHero
                 ? "border-white/35 text-white hover:bg-white/10"
@@ -61,6 +62,7 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
           </Link>
           <Link
             href={registerUrl}
+            data-analytics-event="create_account_clicked"
             className={`rounded-full px-4 py-2 text-sm font-semibold shadow-sm transition ${
               isHero
                 ? "bg-white text-[#004aad] hover:bg-blue-50"
