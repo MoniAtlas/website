@@ -19,7 +19,7 @@ export default function AboutPage() {
       copy="MoniAtlas is being built to help financially busy people get a clearer view of their money, without relying on scattered spreadsheets, disconnected apps, and mental guesswork."
       ctaHref={registerUrl}
       ctaLabel="Create Account"
-      secondaryHref="/how-it-works"
+      secondaryHref="/#how-it-works"
       secondaryLabel="See how it works"
     >
       <Section

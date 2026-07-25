@@ -36,8 +36,8 @@ export default function SecurityPage() {
       />
 
       <Section
-        title="Open Banking security positioning"
-        copy="Where connected account features are available, MoniAtlas will use secure Open Banking flows. Bank login credentials are not stored by MoniAtlas."
+        title="Connected account protection"
+        copy="Where connected account features are available, MoniAtlas will use secure, consent-based connection flows. Bank login credentials are not stored by MoniAtlas."
         tone="muted"
       />
 

@@ -1,19 +1,8 @@
 import Link from "next/link";
-import { PricingSection } from "./components/PricingSection";
-import { BrandLogo } from "@/components/brand-logo";
 import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 
-const loginUrl = "https://app.moniatlas.com/login";
 const registerUrl = "https://app.moniatlas.com/register";
-
-const navItems = [
-  { label: "How it works", href: "/how-it-works" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Open Banking", href: "/open-banking" },
-  { label: "Security", href: "/security" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
 
 const productFeatures = [
   {
@@ -51,10 +40,57 @@ const questionBubbles = [
 ];
 
 const steps = [
-  "Create your free account",
-  "Add your accounts",
-  "View your financial picture",
-  "Ask Moni",
+  {
+    title: "Create your free account",
+    copy: "Sign up and start building your Money Map in minutes.",
+  },
+  {
+    title: "Add what matters",
+    copy: "Begin manually with your accounts, assets, debts, property, pensions, investments, and bills.",
+  },
+  {
+    title: "See the full picture",
+    copy: "Understand your net worth, cash flow, debt, and future outlook in one place.",
+  },
+  {
+    title: "Ask Moni",
+    copy: "Use plain-English questions to explore the financial information in your account.",
+  },
+];
+
+const featureSpotlights = [
+  {
+    title: "Money Map",
+    copy: "Bring the accounts and assets that matter into one clear financial picture.",
+    label: "Net worth",
+    value: "£284,250",
+    details: ["12 accounts tracked", "Forward this month"],
+    tone: "blue",
+  },
+  {
+    title: "Cash flow planner",
+    copy: "See upcoming income and outgoings, and understand what is available before payday.",
+    label: "Available until payday",
+    value: "£1,240",
+    details: ["£3,000 next income", "90-day outlook"],
+    tone: "emerald",
+  },
+  {
+    title: "Debt and property",
+    copy: "Keep repayments, balances, mortgage details, and renewal timelines in view.",
+    label: "Debt position",
+    value: "Moving forward",
+    details: ["Repayments tracked", "Renewal dates visible"],
+    tone: "violet",
+  },
+  {
+    title: "Ask Moni",
+    copy: "Turn the information you have already added into understandable, explainable insights.",
+    label: "AI insight",
+    value: "What changed this month?",
+    details: ["Plain-English questions", "Insights, not advice"],
+    tone: "cyan",
+  },
 ];
 
 const trustCards = [
@@ -68,43 +104,13 @@ const trustCards = [
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white text-slate-950">
+      <SiteHeader />
       <section className="relative isolate overflow-hidden bg-[#004aad] text-white">
         <div className="absolute left-1/2 top-0 -z-10 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-white/15 blur-3xl" />
         <div className="absolute right-0 top-28 -z-10 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl" />
         <div className="absolute bottom-10 left-8 -z-10 h-64 w-64 rounded-full bg-blue-200/10 blur-3xl" />
 
-        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 lg:px-8">
-          <header className="flex flex-wrap items-center justify-between gap-4 rounded-full border border-white/15 bg-white/5 px-4 py-3 backdrop-blur md:flex-nowrap md:px-5">
-            <BrandLogo light />
-
-            <nav className="order-3 flex w-full items-center gap-5 overflow-x-auto text-sm font-medium text-blue-50/90 md:order-2 md:w-auto md:justify-center md:overflow-visible">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="transition hover:text-white"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="order-2 flex items-center gap-2 md:order-3">
-              <Link
-                href={loginUrl}
-                className="rounded-full border border-white/35 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Log In
-              </Link>
-              <Link
-                href={registerUrl}
-                className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#004aad] shadow-sm transition hover:bg-blue-50"
-              >
-                Create Account
-              </Link>
-            </div>
-          </header>
-
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-10 pb-36 pt-16 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pb-44 lg:pt-24">
             <div className="max-w-3xl">
               <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-50 shadow-sm backdrop-blur">
@@ -132,7 +138,7 @@ export default function HomePage() {
                   Create Account
                 </Link>
                 <Link
-                  href="/how-it-works"
+                  href="#how-it-works"
                   className="rounded-full border border-white/35 px-7 py-3 text-center font-semibold text-white transition hover:bg-white/10"
                 >
                   See how it works
@@ -283,31 +289,90 @@ export default function HomePage() {
 
       <section
         id="how-it-works"
-        className="bg-slate-50 px-5 py-16 sm:px-6 sm:py-20 lg:px-8"
+        className="scroll-mt-24 bg-slate-50 px-5 py-16 sm:px-6 sm:py-20 lg:px-8"
       >
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-            How MoniAtlas works
-          </h2>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#004aad]">
+              How it works
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+              A clearer money picture, step by step
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Start with what you know today, then use MoniAtlas to organise the details into a view you can act on.
+            </p>
+          </div>
           <div className="mt-9 grid gap-4 md:grid-cols-4">
             {steps.map((step, index) => (
               <article
-                key={step}
+                key={step.title}
                 className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#004aad] text-sm font-bold text-white">
                   {index + 1}
                 </span>
                 <h3 className="mt-5 text-xl font-bold text-slate-950">
-                  {step}
+                  {step.title}
                 </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{step.copy}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <PricingSection />
+      <section className="bg-white px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-wide text-[#004aad]">
+              Product views
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+              See the parts of your financial life together
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              From the big picture to the next payment, each view is designed to make your financial information easier to understand.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {featureSpotlights.map((feature) => (
+              <article
+                key={feature.title}
+                className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-sm"
+              >
+                <div className="p-6 sm:p-8">
+                  <h3 className="text-2xl font-bold tracking-tight text-slate-950">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-3 max-w-md leading-7 text-slate-600">{feature.copy}</p>
+                </div>
+                <div className="mx-4 mb-4 rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-lg sm:mx-6 sm:mb-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-sm font-medium text-slate-500">{feature.label}</p>
+                      <p className="mt-2 text-2xl font-bold tracking-tight text-slate-950">
+                        {feature.value}
+                      </p>
+                    </div>
+                    <span className={`h-3 w-3 rounded-full ${
+                      feature.tone === "emerald" ? "bg-emerald-500" : feature.tone === "violet" ? "bg-violet-500" : feature.tone === "cyan" ? "bg-cyan-500" : "bg-[#004aad]"
+                    }`} />
+                  </div>
+                  <div className="mt-6 grid grid-cols-2 gap-3">
+                    {feature.details.map((detail) => (
+                      <div key={detail} className="rounded-2xl bg-slate-50 p-3 text-sm font-semibold text-slate-700">
+                        {detail}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section
         id="security"
@@ -335,7 +400,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="open-banking" className="bg-white px-5 py-16 sm:px-6 lg:px-8">
+      <section id="get-started" className="bg-white px-5 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-[2rem] bg-[#004aad] px-6 py-12 text-white shadow-2xl shadow-blue-950/15 sm:px-10 sm:py-14">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>

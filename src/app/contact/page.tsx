@@ -9,7 +9,6 @@ const contactCards = [
 
 const helpfulLinks = [
   { label: "Pricing", href: "/pricing" },
-  { label: "Open Banking", href: "/open-banking" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Use", href: "/terms" },
 ];

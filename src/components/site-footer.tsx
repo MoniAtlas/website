@@ -5,10 +5,9 @@ const footerGroups = [
   {
     title: "Product",
     links: [
-      { label: "How it works", href: "/how-it-works" },
+      { label: "How it works", href: "/#how-it-works" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Open Banking", href: "/open-banking" },
-      { label: "Security", href: "/security" },
+      { label: "Security & Data Protection", href: "/security" },
     ],
   },
   {
