@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { PricingSection } from "./components/PricingSection";
+import { BrandLogo } from "@/components/brand-logo";
+import { SiteFooter } from "@/components/site-footer";
 
 const loginUrl = "https://app.moniatlas.com/login";
 const registerUrl = "https://app.moniatlas.com/register";
@@ -73,9 +75,7 @@ export default function HomePage() {
 
         <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 lg:px-8">
           <header className="flex flex-wrap items-center justify-between gap-4 rounded-full border border-white/15 bg-white/5 px-4 py-3 backdrop-blur md:flex-nowrap md:px-5">
-            <Link href="/" className="text-xl font-bold tracking-tight">
-              MoniAtlas
-            </Link>
+            <BrandLogo light />
 
             <nav className="order-3 flex w-full items-center gap-5 overflow-x-auto text-sm font-medium text-blue-50/90 md:order-2 md:w-auto md:justify-center md:overflow-visible">
               {navItems.map((item) => (
@@ -365,48 +365,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="bg-slate-950 px-5 py-12 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_1.2fr]">
-          <div>
-            <Link href="/" className="text-xl font-bold">
-              MoniAtlas
-            </Link>
-            <p className="mt-3 text-sm text-slate-300">
-              One map for all your money
-            </p>
-            <p className="mt-6 max-w-xl text-sm leading-6 text-slate-400">
-              MoniAtlas provides organisation, tracking, planning, and insights.
-              It does not provide regulated financial advice.
-            </p>
-          </div>
-          <nav className="grid grid-cols-2 gap-3 text-sm text-slate-300 sm:grid-cols-3">
-            <Link href="/how-it-works" className="hover:text-white">
-              How it works
-            </Link>
-            <Link href="/pricing" className="hover:text-white">
-              Pricing
-            </Link>
-            <Link href="/open-banking" className="hover:text-white">
-              Open Banking
-            </Link>
-            <Link href="/security" className="hover:text-white">
-              Security
-            </Link>
-            <Link href="/about" className="hover:text-white">
-              About
-            </Link>
-            <Link href="/contact" className="hover:text-white">
-              Contact
-            </Link>
-            <Link href="/privacy" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-white">
-              Terms of Use
-            </Link>
-          </nav>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

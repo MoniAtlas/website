@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "./brand-logo";
 
 const loginUrl = "https://app.moniatlas.com/login";
 const registerUrl = "https://app.moniatlas.com/register";
@@ -16,9 +17,7 @@ export function SiteHeader() {
   return (
     <header className="border-b border-slate-200 bg-white/95 px-5 py-4 backdrop-blur sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
-        <Link href="/" className="text-xl font-bold tracking-tight text-[#004aad]">
-          MoniAtlas
-        </Link>
+        <BrandLogo />
 
         <nav className="order-3 flex w-full items-center gap-5 overflow-x-auto text-sm font-medium text-slate-600 md:order-2 md:w-auto md:justify-center md:overflow-visible">
           {navItems.map((item) => (
