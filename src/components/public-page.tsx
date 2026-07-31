@@ -4,7 +4,6 @@ import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 
 type PublicPageProps = {
-  eyebrow?: string;
   title: string;
   copy: string;
   children: ReactNode;
@@ -15,7 +14,6 @@ type PublicPageProps = {
 };
 
 export function PublicPage({
-  eyebrow,
   title,
   copy,
   children,
@@ -32,12 +30,7 @@ export function PublicPage({
         <div className="absolute right-0 top-20 -z-10 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl" />
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            {eyebrow ? (
-              <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-50 backdrop-blur">
-                {eyebrow}
-              </p>
-            ) : null}
-            <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               {title}
             </h1>
             <p className="mt-6 text-lg leading-8 text-blue-50 sm:text-xl sm:leading-9">

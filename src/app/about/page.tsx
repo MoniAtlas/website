@@ -58,7 +58,6 @@ function PillarGrid() {
 export default function AboutPage() {
   return (
     <PublicPage
-      eyebrow="About"
       title="About MoniAtlas"
       copy="MoniAtlas is an AI-first financial clarity platform built around the person, not the account — bringing everyday money, debt, property, pensions, investments, cash flow and goals into one connected, understandable view."
       ctaHref={registerUrl}

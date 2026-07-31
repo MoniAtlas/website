@@ -8,211 +8,236 @@ const pricingPlans = [
     price: "£0",
     cadence: "/month",
     purpose:
-      "For people who want to start building their Money Map and understand their financial position in one place.",
+      "For building your Money Map, tracking the essentials, and understanding your current financial position.",
     features: [
-      "Manual accounts",
-      "Money Map overview",
-      "Basic net worth view",
-      "Basic cash flow planner",
-      "Basic debt overview",
-      "Basic property and mortgage tracking",
+      "Up to 10 manual accounts",
+      "One connected institution",
+      "90-day Cash Flow",
+      "Basic planning and insights",
+      "Limited Ask Moni prompts",
     ],
     cta: "Create Account",
     href: registerUrl,
   },
   {
     name: "Founder",
-    price: "£4.99",
+    price: "£6.99",
     cadence: "/month",
-    badge: "Planned / early adopter",
+    annualPrice: "or £69/year",
     purpose:
-      "For early adopters who want enhanced planning tools as MoniAtlas develops.",
+      "For people who want enhanced forecasting, richer history, and early access to selected AI agents.",
     features: [
-      "Everything in Free",
-      "Recurring bills and payment tracking",
-      "Enhanced cash flow planner",
-      "Retirement snapshot",
-      "Early access to new features",
+      "Unlimited manual accounts",
+      "Multiple connected institutions",
+      "12-month Cash Flow",
+      "Enhanced planning and insights",
+      "Founder price lock",
     ],
     cta: "Register interest",
     href: "/waitlist?plan=founder",
-    note: "Founder plan is not charged yet.",
     recommended: true,
   },
   {
-    name: "Plus",
-    price: "£8.99",
+    name: "Premium",
+    price: "£14.99",
     cadence: "/month",
-    badge: "Coming soon",
+    annualPrice: "or £149/year",
     purpose:
-      "For users who want connected accounts, automation, and AI-powered financial insights once those features are ready.",
+      "For the full MoniAtlas experience, including advanced planning, complete history, and the full AI agent library.",
     features: [
-      "Everything in Founder",
-      "Open Banking account connections",
-      "Automated balance updates",
-      "AI money assistant",
-      "Forecasts and scenario planning",
-      "Smart reminders",
-      "Monthly money check-in",
+      "Full available account history",
+      "Advanced Cash Flow forecasting",
+      "Full Ask Moni experience",
+      "Unlimited AI agents and goals",
+      "Priority support",
     ],
-    cta: "Coming soon",
-    href: "/waitlist?plan=plus",
+    cta: "Register interest",
+    href: "/waitlist?plan=premium",
   },
 ];
 
-const comparisonGroups = [
+type ComparisonFeature = [
+  feature: string,
+  free: string,
+  founder: string,
+  premium: string,
+];
+
+type ComparisonGroup = {
+  category: string;
+  features: ComparisonFeature[];
+};
+
+const comparisonGroups: ComparisonGroup[] = [
   {
     category: "Core Dashboard",
     features: [
-      ["Money Map / financial overview", "Included", "Included", "Included"],
-      ["Net worth dashboard", "Basic", "Included", "Included"],
-      ["Assets vs liabilities summary", "Basic", "Included", "Included"],
-      ["Account category breakdown", "Limited", "Included", "Included"],
-      ["Mobile-first dashboard", "Included", "Included", "Included"],
+      ["Personal Money Map", "✓", "✓", "✓"],
+      ["Net worth and assets vs liabilities", "✓", "✓", "✓"],
+      ["Financial coverage score", "✓", "✓", "✓"],
+      ["Cause-and-effect financial insights", "Limited", "Enhanced", "Full"],
+      ["Net worth history", "3 months", "12 months", "Full history"],
     ],
   },
   {
-    category: "Accounts",
+    category: "Accounts & Documents",
     features: [
-      ["Manual accounts", "Limited", "Included", "Included"],
-      ["Bank & savings accounts", "Included", "Included", "Included"],
-      ["Credit cards", "Included", "Included", "Included"],
-      ["Loans", "Included", "Included", "Included"],
-      ["Mortgages", "View only / basic manual", "Included", "Included"],
-      ["Property value tracking", "Basic", "Included", "Included"],
-      ["Pensions", "Manual only", "Included", "Included"],
-      ["Investments", "Manual only", "Included", "Included"],
-      ["Crypto", "Manual only", "Included", "Included"],
-      ["Edit/delete manual accounts", "Included", "Included", "Included"],
-      ["Document Storage", "Not included", "Limited", "Included"],
+      ["Manual accounts", "Up to 10", "Unlimited", "Unlimited"],
+      ["Bank accounts, cards, loans and mortgages", "✓", "✓", "✓"],
+      ["Pensions, investments and crypto", "✓", "✓", "✓"],
+      ["Document storage", "Limited", "Expanded", "Full"],
     ],
   },
   {
     category: "Open Banking",
     features: [
-      ["Link bank accounts", "1 connection / limited", "Included", "Included"],
-      ["Linked current accounts", "Limited", "Included", "Included"],
-      ["Linked savings accounts", "Limited", "Included", "Included"],
-      ["Auto balance refresh", "Limited", "Included", "Included"],
-      ["Transaction sync", "Limited history", "Included", "Included"],
-      ["Reconnect expired consent", "Included", "Included", "Included"],
+      ["Connected institutions", "1", "Multiple", "Multiple"],
+      [
+        "Transaction history",
+        "90 days",
+        "Full available history",
+        "Full available history",
+      ],
+      ["Automatic balance refresh", "Limited", "Enhanced", "Enhanced"],
+      ["Data freshness monitoring", "Basic", "Enhanced", "Advanced"],
     ],
   },
   {
     category: "Cash Flow",
     features: [
-      ["90-day cash flow", "Included", "Included", "Included"],
-      ["Income vs spending view", "Basic", "Included", "Included"],
-      ["Upcoming balance risk", "Not included", "Basic", "Advanced"],
-      ["Recurring bills/payment tracking", "Not included", "Included", "Included"],
-      ["Manual expected income/outgoings", "Not included", "Included", "Included"],
-      ["Category-level cash flow", "Not included", "Basic", "Advanced"],
-      ["Cash flow explanation", "Not included", "Included", "Included"],
+      ["90-day Cash Flow", "✓", "✓", "✓"],
+      ["12-month Cash Flow", "—", "✓", "✓"],
+      ["Custom forecasting range", "—", "Limited", "✓"],
+      ["Money until payday", "Basic", "Enhanced", "Advanced"],
+      ["Recurring payment tracking", "Limited", "✓", "Full"],
+      ["Shortfall warnings", "Basic", "Enhanced", "Advanced"],
+      ["Cause-and-effect explanations", "Limited", "Enhanced", "Full"],
     ],
   },
   {
-    category: "AI Layer",
+    category: "Ask Moni",
     features: [
-      ["AI assistant access", "Limited prompts", "Included", "Included"],
-      ['Ask "What\'s my net worth?"', "Included", "Included", "Included"],
-      ['Ask "What changed this week?"', "Limited", "Included", "Included"],
-      ['Ask "Can I afford this month?"', "Not included", "Included", "Included"],
-      ["AI insight feed", "Basic", "Included", "Included"],
-      ["AI explains account changes", "Not included", "Included", "Included"],
-      ["AI cash flow summaries", "Not included", "Included", "Included"],
-      ["AI net worth summaries", "Not included", "Included", "Included"],
-      ['AI source references / "why" explanation', "Not included", "Included", "Included"],
-      ["AI scenario prompts", "Not included", "Limited", "Included"],
-      ["AI planning conversations", "Not included", "Limited", "Included"],
-      ["AI action orchestration", "Not included", "Not included", "Future only"],
+      [
+        "Personal AI assistant",
+        "Limited prompts",
+        "Full access",
+        "Expanded / fair use",
+      ],
+      ["Net worth and Cash Flow questions", "✓", "✓", "✓"],
+      ["“What changed?” explanations", "Limited", "✓", "✓"],
+      ["Affordability and planning scenarios", "—", "Limited", "✓"],
+      ["Source-backed explanations", "Basic", "Enhanced", "Full"],
     ],
   },
   {
-    category: "Future / Planning",
+    category: "AI Agent Library",
     features: [
-      ["Future dashboard", "Basic", "Included", "Included"],
-      ["Retirement snapshot", "Not included", "Included", "Included"],
-      ["Retirement assumptions", "Not included", "Included", "Included"],
-      ["Short-term goals list", "Limited", "Included", "Included"],
-      ["Goal progress tracking", "Not included", "Included", "Included"],
-      ["Scenario modelling", "Not included", "Not included", "Included"],
-      ['"What if?" planning', "Not included", "Not included", "Included"],
-      ["Mortgage renewal planning", "Not included", "Basic", "Included"],
-      ["Interest rate risk view", "Not included", "Not included", "Included"],
+      ["Agent access", "Preview", "Early access", "Full library"],
+      ["Active agents", "1 trial agent", "Selected agents", "Unlimited agents"],
+      ["Agent controls and pause/disable", "✓", "✓", "✓"],
+      ["Agent findings and source references", "✓", "✓", "✓"],
+      ["Agent history and audit trail", "Limited", "Enhanced", "Full"],
+    ],
+  },
+  {
+    category: "AI Agents",
+    features: [
+      ["Cash Flow Guardian", "Preview", "Early access", "✓"],
+      ["Bills Watch", "Preview", "Early access", "✓"],
+      ["Mortgage Watch", "Basic countdown", "Selected features", "Full"],
+      ["Debt Progress Agent", "Basic tracking", "Early access", "✓"],
+      ["Retirement Tracker", "Basic snapshot", "Early access", "✓"],
+      ["Goal Coach", "Up to 3 goals", "Enhanced", "Unlimited"],
+      ["Document Agent", "Limited", "Early access", "Full"],
+      ["Savings Resilience Agent", "Basic", "Early access", "✓"],
+      ["Financial Coverage Agent", "Basic", "Enhanced", "Full"],
+      ["Life Event Agent", "—", "—", "Future release"],
+    ],
+  },
+  {
+    category: "Planning",
+    features: [
+      ["Goal planning", "Basic", "Enhanced", "Full"],
+      ["Retirement planning", "Basic", "Enhanced", "Full"],
+      ["“What if?” scenarios", "—", "Limited", "✓"],
+      ["Future financial timeline", "Basic", "Enhanced", "Full"],
     ],
   },
   {
     category: "Property & Mortgage",
     features: [
-      ["Primary property tile", "Basic", "Included", "Included"],
-      ["Property value", "Manual", "Included", "Included"],
-      ["Mortgage balance", "Manual", "Included", "Included"],
-      ["Mortgage term/rate/monthly payment", "Not included", "Included", "Included"],
-      ["Auto mortgage balance projection", "Not included", "Included", "Included"],
-      ["Mortgage renewal reminder", "Not included", "Not included", "Included"],
-      ["Mortgage document upload", "Not included", "Not included", "Future Plus"],
-      ["Mortgage document AI extraction", "Not included", "Not included", "Future Plus"],
+      ["Property value and equity", "✓", "✓", "✓"],
+      ["Mortgage balance, rate and payment", "✓", "✓", "✓"],
+      ["Mortgage projections", "—", "Selected features", "✓"],
+      ["Mortgage renewal planning", "—", "Early access", "✓"],
     ],
   },
   {
     category: "Insights & Alerts",
     features: [
-      ["Basic dashboard insights", "Included", "Included", "Included"],
-      ["Balance movement alerts", "Not included", "Included", "Included"],
-      ["Spending anomaly detection", "Not included", "Limited", "Included"],
-      ["Cash shortfall warning", "Not included", "Included", "Included"],
-      ["Mortgage renewal alerts", "Not included", "Not included", "Included"],
-      ["Pension/investment visibility prompts", "Not included", "Included", "Included"],
-      ["Push/email/SMS notifications", "Not included", "Not included", "Future Plus"],
+      ["Dashboard insights", "✓", "✓", "✓"],
+      ["Balance movement alerts", "Limited", "✓", "✓"],
+      ["Spending anomaly detection", "Limited", "✓", "✓"],
+      ["Priority financial actions", "Basic", "Enhanced", "Full"],
+      ["Email and future push notifications", "—", "Early access", "✓"],
     ],
   },
   {
     category: "Data & History",
     features: [
-      ["Account history", "Limited", "Included", "Included"],
-      ["Transaction history", "Limited", "Included", "Included"],
-      ["Trend history", "Not included", "Basic", "Advanced"],
-      ["Export data", "Not included", "Included", "Included"],
-      ["Audit/history view", "Not included", "Basic", "Included"],
+      ["Account history", "3 months", "12 months", "Full history"],
+      [
+        "Transaction history",
+        "90 days",
+        "Full available history",
+        "Full available history",
+      ],
+      ["Data export", "Basic", "Enhanced", "Full"],
+      ["Audit and activity history", "Limited", "Enhanced", "Full"],
     ],
   },
   {
     category: "Security & Control",
     features: [
-      ["Secure login", "Included", "Included", "Included"],
-      ["Consent management", "Included", "Included", "Included"],
-      ["Disconnect linked accounts", "Included", "Included", "Included"],
-      ["Delete account/data", "Included", "Included", "Included"],
-      ["GDPR privacy controls", "Included", "Included", "Included"],
-      ["Two-factor authentication", "Not included", "Included", "Included"],
+      ["Secure login and two-factor authentication", "✓", "✓", "✓"],
+      ["Consent management", "✓", "✓", "✓"],
+      ["Disconnect accounts", "✓", "✓", "✓"],
+      ["Delete account and data", "✓", "✓", "✓"],
+      ["GDPR and document deletion controls", "✓", "✓", "✓"],
     ],
   },
   {
-    category: "Support / Commercial",
+    category: "Support",
     features: [
-      ["Early access updates", "Included", "Included", "Included"],
-      ["Founder pricing lock-in", "Not included", "Included", "Not included"],
-      ["Priority access to new features", "Not included", "Included", "Included"],
-      ["Beta feature access", "Not included", "Limited", "Included"],
-      ["Priority support", "Not included", "Not included", "Included"],
+      ["Product updates", "✓", "✓", "✓"],
+      ["Premium trial", "✓", "✓", "—"],
+      ["Founder price lock", "—", "✓", "—"],
+      ["Priority feature access", "—", "✓", "✓"],
+      ["Priority support", "—", "—", "✓"],
     ],
   },
 ];
 
-function valueClass(value: string) {
-  if (value === "Included") {
-    return "bg-emerald-50 text-emerald-700";
+const tierLabels = [
+  ["Free", "Free"],
+  ["Founder", "Founder £6.99"],
+  ["Premium", "Premium £14.99"],
+] as const;
+
+function comparisonValueClass(value: string) {
+  if (value === "✓") {
+    return "font-bold text-emerald-700";
   }
 
-  if (value === "Not included") {
-    return "bg-slate-100 text-slate-500";
+  if (value === "—") {
+    return "font-semibold text-slate-400";
   }
 
   if (value.startsWith("Future")) {
-    return "bg-amber-50 text-amber-700";
+    return "font-semibold text-amber-700";
   }
 
-  return "bg-blue-50 text-[#004aad]";
+  return "font-semibold text-slate-700";
 }
 
 export function PricingSection({
@@ -221,7 +246,10 @@ export function PricingSection({
   showIntro?: boolean;
 }) {
   return (
-    <section id="pricing" className="bg-white px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section
+      id="pricing"
+      className="bg-white px-5 py-16 sm:px-6 sm:py-20 lg:px-8"
+    >
       <div className="mx-auto max-w-7xl">
         {showIntro ? (
           <div className="max-w-3xl">
@@ -229,12 +257,11 @@ export function PricingSection({
               Pricing
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              Start free, upgrade as MoniAtlas grows
+              Start free, then choose the depth you need
             </h2>
             <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-              Compare what is included in Free, Founder, and Plus. Connected
-              accounts, richer planning tools, and AI-powered insights will
-              expand as MoniAtlas develops.
+              Compare Free, Founder, and Premium across connected accounts,
+              Cash Flow, planning, history, and AI-powered insights.
             </p>
           </div>
         ) : null}
@@ -249,22 +276,22 @@ export function PricingSection({
                   : "border-slate-200 bg-white"
               }`}
             >
-              {plan.badge || plan.recommended ? (
-                <span className="mb-4 w-fit rounded-full bg-[#004aad] px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-                  {plan.badge || "Recommended"}
-                </span>
-              ) : null}
               <h3 className="text-2xl font-bold text-slate-950">{plan.name}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600">
                 {plan.purpose}
               </p>
               <div className="mt-6">
-                <span className="text-4xl font-bold tracking-tight">
+                <span className="text-4xl font-bold tracking-tight text-slate-950">
                   {plan.price}
                 </span>
                 <span className="ml-1 text-sm font-medium text-slate-500">
                   {plan.cadence}
                 </span>
+                {plan.annualPrice ? (
+                  <p className="mt-2 text-sm font-semibold text-[#004aad]">
+                    {plan.annualPrice}
+                  </p>
+                ) : null}
               </div>
 
               <ul className="mt-6 grid gap-3 text-sm leading-6 text-slate-700">
@@ -275,12 +302,6 @@ export function PricingSection({
                   </li>
                 ))}
               </ul>
-
-              {plan.note ? (
-                <p className="mt-5 rounded-2xl bg-white/70 p-3 text-sm leading-6 text-slate-600">
-                  {plan.note}
-                </p>
-              ) : null}
 
               <Link
                 href={plan.href}
@@ -297,12 +318,9 @@ export function PricingSection({
         </div>
 
         <p className="mt-6 rounded-2xl bg-slate-50 p-5 text-sm leading-6 text-slate-600">
-          Household plan planned later at £14.99/month.
-          <span className="mt-2 block">
-            No payment is needed to start. MoniAtlas provides organisation,
-            tracking, planning, and insights. It does not provide regulated
-            financial advice.
-          </span>
+          Monthly and annual prices are shown in GBP. MoniAtlas provides
+          organisation, tracking, planning, and insights. It does not provide
+          regulated financial advice.
         </p>
 
         <div className="mt-10 rounded-[1.75rem] border border-slate-200 bg-slate-50 p-4 shadow-sm sm:p-6">
@@ -316,52 +334,74 @@ export function PricingSection({
               </h3>
             </div>
             <p className="max-w-xl text-sm leading-6 text-slate-500">
-              Feature availability may change during early access. Future-only
-              items are planned, not live product capabilities.
+              Compare the level of access, history, automation, and support
+              available with Free, Founder, and Premium.
             </p>
           </div>
 
-          <div className="mt-6 hidden overflow-hidden rounded-2xl border border-slate-200 bg-white lg:block">
-            <div className="grid grid-cols-[1.25fr_0.75fr_0.75fr_0.75fr] bg-slate-950 text-sm font-semibold text-white">
-              <div className="px-4 py-4">Feature</div>
-              <div className="px-4 py-4">Free</div>
-              <div className="px-4 py-4">Founder £4.99</div>
-              <div className="px-4 py-4">Plus £8.99</div>
-            </div>
-
-            {comparisonGroups.map((group) => (
-              <div key={group.category}>
-                <div className="border-t border-slate-200 bg-blue-50 px-4 py-3 text-sm font-bold text-[#004aad]">
-                  {group.category}
-                </div>
-                {group.features.map(([feature, free, founder, plus]) => (
-                  <div
-                    key={`${group.category}-${feature}`}
-                    className="grid grid-cols-[1.25fr_0.75fr_0.75fr_0.75fr] border-t border-slate-100 text-sm"
-                  >
-                    <div className="px-4 py-3 font-medium text-slate-800">
-                      {feature}
-                    </div>
-                    {[free, founder, plus].map((value, index) => (
-                      <div key={`${feature}-${index}`} className="px-4 py-3">
-                        <span
-                          className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${valueClass(
-                            value,
-                          )}`}
+          <div className="mt-6 hidden overflow-x-auto rounded-2xl border border-slate-200 bg-white lg:block">
+            <table className="w-full min-w-[72rem] border-collapse text-left text-sm">
+              <thead className="bg-slate-950 text-white">
+                <tr>
+                  <th scope="col" className="w-[15%] px-4 py-4 font-semibold">
+                    Category
+                  </th>
+                  <th scope="col" className="w-[31%] px-4 py-4 font-semibold">
+                    Feature
+                  </th>
+                  <th scope="col" className="w-[16%] px-4 py-4 font-semibold">
+                    Free
+                  </th>
+                  <th scope="col" className="w-[19%] px-4 py-4 font-semibold">
+                    Founder £6.99
+                  </th>
+                  <th scope="col" className="w-[19%] px-4 py-4 font-semibold">
+                    Premium £14.99
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonGroups.map((group) =>
+                  group.features.map(
+                    ([feature, free, founder, premium], featureIndex) => (
+                      <tr
+                        key={`${group.category}-${feature}`}
+                        className="border-t border-slate-200 align-top"
+                      >
+                        {featureIndex === 0 ? (
+                          <th
+                            scope="rowgroup"
+                            rowSpan={group.features.length}
+                            className="bg-blue-50 px-4 py-4 font-bold text-[#004aad]"
+                          >
+                            {group.category}
+                          </th>
+                        ) : null}
+                        <th
+                          scope="row"
+                          className="px-4 py-3 font-medium text-slate-900"
                         >
-                          {value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            ))}
+                          {feature}
+                        </th>
+                        {[free, founder, premium].map((value, index) => (
+                          <td
+                            key={`${feature}-${index}`}
+                            className={`px-4 py-3 ${comparisonValueClass(value)}`}
+                          >
+                            {value}
+                          </td>
+                        ))}
+                      </tr>
+                    ),
+                  ),
+                )}
+              </tbody>
+            </table>
           </div>
 
           <div className="mt-6 space-y-4 lg:hidden">
             {comparisonGroups.map((group) => (
-              <div
+              <section
                 key={group.category}
                 className="rounded-2xl border border-slate-200 bg-white p-4"
               >
@@ -369,39 +409,37 @@ export function PricingSection({
                   {group.category}
                 </h4>
                 <div className="mt-4 space-y-4">
-                  {group.features.map(([feature, free, founder, plus]) => (
+                  {group.features.map(([feature, free, founder, premium]) => (
                     <div
                       key={`${group.category}-${feature}`}
                       className="border-t border-slate-100 pt-4 first:border-t-0 first:pt-0"
                     >
                       <p className="font-medium text-slate-900">{feature}</p>
                       <div className="mt-3 grid gap-2 text-sm sm:grid-cols-3">
-                        {[
-                          ["Free", free],
-                          ["Founder", founder],
-                          ["Plus", plus],
-                        ].map(([tier, value]) => (
-                          <div
-                            key={`${feature}-${tier}`}
-                            className="flex items-center justify-between gap-3 rounded-xl bg-slate-50 px-3 py-2"
-                          >
-                            <span className="font-medium text-slate-500">
-                              {tier}
-                            </span>
-                            <span
-                              className={`rounded-full px-2.5 py-1 text-xs font-semibold ${valueClass(
-                                value,
-                              )}`}
+                        {tierLabels.map(([tier, label], index) => {
+                          const value = [free, founder, premium][index];
+
+                          return (
+                            <div
+                              key={`${feature}-${tier}`}
+                              className="flex min-w-0 items-center justify-between gap-3 rounded-xl bg-slate-50 px-3 py-2 sm:block"
                             >
-                              {value}
-                            </span>
-                          </div>
-                        ))}
+                              <span className="shrink-0 text-xs font-medium text-slate-500">
+                                {label}
+                              </span>
+                              <span
+                                className={`min-w-0 text-right text-xs sm:mt-1 sm:block sm:text-left ${comparisonValueClass(value)}`}
+                              >
+                                {value}
+                              </span>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
+              </section>
             ))}
           </div>
         </div>

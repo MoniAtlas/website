@@ -35,7 +35,6 @@ const sections = [
 export default function TermsPage() {
   return (
     <PublicPage
-      eyebrow="Terms"
       title="Terms of Use"
       copy="These Terms explain the basic rules for using MoniAtlas."
       ctaHref="mailto:hello@moniatlas.com"

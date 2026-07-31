@@ -12,7 +12,6 @@ const principles = [
 export default function SecurityPage() {
   return (
     <PublicPage
-      eyebrow="Security"
       title="Security and data protection"
       copy="MoniAtlas is designed around clarity, consent, and control, with a GDPR-first approach to personal financial information."
       ctaHref="/contact"

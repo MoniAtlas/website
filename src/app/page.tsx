@@ -113,10 +113,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-10 pb-36 pt-16 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pb-44 lg:pt-24">
             <div className="max-w-3xl">
-              <p className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-blue-50 shadow-sm backdrop-blur">
-                AI-first financial clarity for UK professionals
-              </p>
-              <h1 className="mt-7 text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+              <h1 className="text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
                 One map for all your money.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-blue-50/90 sm:text-xl sm:leading-9">

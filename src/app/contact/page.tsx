@@ -16,7 +16,6 @@ const helpfulLinks = [
 export default function ContactPage() {
   return (
     <PublicPage
-      eyebrow="Contact"
       title="Contact MoniAtlas"
       copy="Have a question about MoniAtlas, connected accounts, pricing, privacy, or the product roadmap? Get in touch."
       ctaHref="mailto:hello@moniatlas.com"

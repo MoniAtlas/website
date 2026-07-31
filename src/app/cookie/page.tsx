@@ -3,7 +3,6 @@ import { PublicPage, Section } from "@/components/public-page";
 export default function CookiePage() {
   return (
     <PublicPage
-      eyebrow="Cookies"
       title="Cookie Policy"
       copy="Our full Cookie Policy is still being finalised and isn't published yet."
       ctaHref="mailto:privacy@moniatlas.com"

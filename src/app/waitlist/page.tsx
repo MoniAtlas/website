@@ -6,7 +6,6 @@ const registerUrl = "https://app.moniatlas.com/register";
 export default function WaitlistPage() {
   return (
     <PublicPage
-      eyebrow="Register interest"
       title="Register your interest"
       copy="Tell us which MoniAtlas plan you are interested in and we will let you know as paid features become available."
       ctaHref={registerUrl}
@@ -54,8 +53,7 @@ export default function WaitlistPage() {
                 >
                   <option>Free</option>
                   <option>Founder</option>
-                  <option>Plus</option>
-                  <option>Household</option>
+                  <option>Premium</option>
                 </select>
               </div>
               <div>
