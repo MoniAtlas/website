@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
-const registerUrl = "https://app.moniatlas.com/register";
+const betaAccessUrl = "/beta-access";
 
 const productFeatures = [
   {
@@ -41,8 +41,8 @@ const questionBubbles = [
 
 const steps = [
   {
-    title: "Create your free account",
-    copy: "Sign up and start building your Money Map in minutes.",
+    title: "Request beta access",
+    copy: "Tell us a little about yourself and we will review your request.",
   },
   {
     title: "Add what matters",
@@ -122,17 +122,17 @@ export default function HomePage() {
                 see whether your financial life is actually moving forward.
               </p>
               <p className="mt-4 max-w-2xl text-base leading-7 text-blue-100/85">
-                Start free with manual tracking today. Connected accounts,
-                richer planning tools, and AI-powered insights will unlock as
-                MoniAtlas develops.
+                We are currently onboarding beta users. Approved beta users
+                receive full access while we continue developing MoniAtlas.
               </p>
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href={registerUrl}
+                  href={betaAccessUrl}
+                  data-analytics-event="beta_access_requested"
                   className="rounded-full bg-white px-7 py-3 text-center font-semibold text-[#004aad] shadow-lg shadow-blue-950/20 transition hover:bg-blue-50"
                 >
-                  Create Account
+                  Request Beta Access
                 </Link>
                 <Link
                   href="#how-it-works"
@@ -405,22 +405,23 @@ export default function HomePage() {
                 Start building your Money Map
               </h2>
               <p className="mt-4 max-w-2xl text-lg leading-8 text-blue-50">
-                Create your free MoniAtlas account and start bringing your
-                financial life into one clear view.
+                Request beta access and, once approved, bring your financial
+                life into one clear view with full access to MoniAtlas.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
-                href={registerUrl}
+                href={betaAccessUrl}
+                data-analytics-event="beta_access_requested"
                 className="rounded-full bg-white px-6 py-3 text-center font-semibold text-[#004aad] hover:bg-blue-50"
               >
-                Create Account
+                Request Beta Access
               </Link>
               <Link
-                href="/pricing"
+                href="https://app.moniatlas.com/login"
                 className="rounded-full border border-white/35 px-6 py-3 text-center font-semibold text-white hover:bg-white/10"
               >
-                View pricing
+                Existing user? Log In
               </Link>
             </div>
           </div>

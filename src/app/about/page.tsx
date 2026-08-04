@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CardGrid, PublicPage, Section } from "@/components/public-page";
 
-const registerUrl = "https://app.moniatlas.com/register";
+const betaAccessUrl = "/beta-access";
 
 const pillars = [
   {
@@ -60,8 +60,8 @@ export default function AboutPage() {
     <PublicPage
       title="About MoniAtlas"
       copy="MoniAtlas is an AI-first financial clarity platform built around the person, not the account — bringing everyday money, debt, property, pensions, investments, cash flow and goals into one connected, understandable view."
-      ctaHref={registerUrl}
-      ctaLabel="Create Account"
+      ctaHref={betaAccessUrl}
+      ctaLabel="Request Beta Access"
       secondaryHref="/#how-it-works"
       secondaryLabel="See how it works"
     >
@@ -135,10 +135,11 @@ export default function AboutPage() {
         tone="muted"
       >
         <Link
-          href={registerUrl}
+          href={betaAccessUrl}
+          data-analytics-event="beta_access_requested"
           className="mt-8 inline-flex rounded-full bg-[#004aad] px-6 py-3 font-semibold text-white hover:bg-[#003f94]"
         >
-          Create Account
+          Request Beta Access
         </Link>
       </Section>
     </PublicPage>

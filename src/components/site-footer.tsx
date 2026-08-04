@@ -6,7 +6,7 @@ const footerGroups = [
     title: "Product",
     links: [
       { label: "How it works", href: "/#how-it-works" },
-      { label: "Pricing", href: "/pricing" },
+      { label: "Request Beta Access", href: "/beta-access" },
       { label: "Security & Data Protection", href: "/security" },
     ],
   },

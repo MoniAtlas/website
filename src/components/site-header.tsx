@@ -2,11 +2,10 @@ import Link from "next/link";
 import { BrandLogo } from "./brand-logo";
 
 const loginUrl = "https://app.moniatlas.com/login";
-const registerUrl = "https://app.moniatlas.com/register";
+const betaAccessUrl = "/beta-access";
 
 const navItems = [
   { label: "How it works", href: "/#how-it-works" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Security & Data Protection", href: "/security" },
   { label: "About", href: "/about" },
 ];
@@ -61,15 +60,15 @@ export function SiteHeader({ variant = "default" }: SiteHeaderProps) {
             Log In
           </Link>
           <Link
-            href={registerUrl}
-            data-analytics-event="create_account_clicked"
+            href={betaAccessUrl}
+            data-analytics-event="beta_access_requested"
             className={`rounded-full px-4 py-2 text-sm font-semibold shadow-sm transition ${
               isHero
                 ? "bg-white text-[#004aad] hover:bg-blue-50"
                 : "bg-[#004aad] text-white hover:bg-[#003f94]"
             }`}
           >
-            Create Account
+            Request Beta Access
           </Link>
         </div>
       </div>

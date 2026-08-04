@@ -49,7 +49,13 @@ export function SiteAnalytics() {
 
 export function CookieConsentBanner() {
   const [visible, setVisible] = useState(false);
-  useEffect(() => setVisible(preferences()?.policyVersion !== POLICY_VERSION), []);
+  useEffect(() => {
+    const timer = window.setTimeout(
+      () => setVisible(preferences()?.policyVersion !== POLICY_VERSION),
+      0,
+    );
+    return () => window.clearTimeout(timer);
+  }, []);
   if (!visible) return null;
   return <section className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl" aria-label="Cookie choices"><p className="font-bold text-slate-950">Your cookie choices</p><p className="mt-1 text-sm leading-6 text-slate-600">Essential cookies keep this website secure. Optional analytics cookies help us understand usage and stay off unless you allow them. Read our <a className="underline" href="/cookie">Cookie Policy</a> and <a className="underline" href="/privacy">Privacy Policy</a>.</p><div className="mt-4 flex flex-wrap justify-end gap-2"><button type="button" className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-800" onClick={() => { setPreferences(false); setVisible(false); }}>Essential only</button><button type="button" className="rounded-full bg-[#004aad] px-4 py-2 text-sm font-semibold text-white" onClick={() => { setPreferences(true); setVisible(false); }}>Allow analytics</button></div></section>;
 }

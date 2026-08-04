@@ -8,7 +8,7 @@ const contactCards = [
 ];
 
 const helpfulLinks = [
-  { label: "Pricing", href: "/pricing" },
+  { label: "Request Beta Access", href: "/beta-access" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Use", href: "/terms" },
 ];
@@ -17,11 +17,11 @@ export default function ContactPage() {
   return (
     <PublicPage
       title="Contact MoniAtlas"
-      copy="Have a question about MoniAtlas, connected accounts, pricing, privacy, or the product roadmap? Get in touch."
+      copy="Have a question about MoniAtlas, connected accounts, beta access, privacy, or the product roadmap? Get in touch."
       ctaHref="mailto:hello@moniatlas.com"
       ctaLabel="Email us"
-      secondaryHref="/pricing"
-      secondaryLabel="View pricing"
+      secondaryHref="/beta-access"
+      secondaryLabel="Request Beta Access"
     >
       <Section title="Contact options">
         <div className="mt-9 grid gap-4 md:grid-cols-3">
