@@ -60,10 +60,6 @@ export default function AboutPage() {
     <PublicPage
       title="About MoniAtlas"
       copy="MoniAtlas is an AI-first financial clarity platform built around the person, not the account — bringing everyday money, debt, property, pensions, investments, cash flow and goals into one connected, understandable view."
-      ctaHref={betaAccessUrl}
-      ctaLabel="Request Beta Access"
-      secondaryHref="/#how-it-works"
-      secondaryLabel="See how it works"
     >
       <Section title="Why MoniAtlas exists">
         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">

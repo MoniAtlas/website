@@ -18,10 +18,6 @@ export default function ContactPage() {
     <PublicPage
       title="Contact MoniAtlas"
       copy="Have a question about MoniAtlas, connected accounts, beta access, privacy, or the product roadmap? Get in touch."
-      ctaHref="mailto:hello@moniatlas.com"
-      ctaLabel="Email us"
-      secondaryHref="/beta-access"
-      secondaryLabel="Request Beta Access"
     >
       <Section title="Contact options">
         <div className="mt-9 grid gap-4 md:grid-cols-3">

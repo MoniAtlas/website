@@ -5,7 +5,7 @@ export default function BetaAccessPage() {
   return (
     <PublicPage
       title="Request beta access"
-      copy="MoniAtlas is currently opening access through a managed beta. Send us your details and we will review your request before enabling access. Approved beta users currently receive full access."
+      copy="MoniAtlas is currently opening access through a managed beta. Share a few basic account details and we will review your request before enabling access. Approved beta users currently receive full access."
       ctaHref="https://app.moniatlas.com/login"
       ctaLabel="Existing user? Log In"
     >

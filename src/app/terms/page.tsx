@@ -37,10 +37,6 @@ export default function TermsPage() {
     <PublicPage
       title="Terms of Use"
       copy="These Terms explain the basic rules for using MoniAtlas."
-      ctaHref="mailto:hello@moniatlas.com"
-      ctaLabel="Contact us"
-      secondaryHref="/privacy"
-      secondaryLabel="Privacy Policy"
     >
       {sections.map((section, index) => (
         <Section

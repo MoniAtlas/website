@@ -12,12 +12,8 @@ const principles = [
 export default function SecurityPage() {
   return (
     <PublicPage
-      title="Security and data protection"
+      title="Security and Data Protection"
       copy="MoniAtlas is designed around clarity, consent, and control, with a GDPR-first approach to personal financial information."
-      ctaHref="/contact"
-      ctaLabel="Contact us"
-      secondaryHref="/privacy"
-      secondaryLabel="Privacy Policy"
     >
       <Section title="Security principles">
         <CardGrid items={principles} />
